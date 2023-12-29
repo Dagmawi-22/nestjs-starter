@@ -10,54 +10,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Style {
+model Todo {
   id                     Int      @id @default(autoincrement())
-  logo                   String
-  backgroundColor        String
-  kenoTextColor          String
-  timerColor             String
-  drawTextColor          String
-  gameIdTextColor        String
-  bannerBackgroundColor  String
-  bannerTextColor        String
-  selectedHICell         String
-  unselectedCell         String
-  selectedLowCell        String
-  jackpotTextColor       String
-  headSelectedColor      String
-  headUnselectedColor    String
-  evenColor              String
-  counterColor           String[]
-  payoutTitleColor       String
-  hitAndWinColor         String
-
-}
-
-model Content {
-  id          Int      @id @default(autoincrement())
-  kenoText    String
-  drawText    String
-  bannerText  String
-  hitAndWinText String[]
-  payoutTitle String[]  
-  jackpotText Int
-}
-
-model Common {
-  id                Int      @id @default(autoincrement())
-  payoutTbl         Json
-  maxBetAmount      Int
-  minBetAmount      Int
-  minDepositAmount  Int
-  maxDepositAmount  Int
-  maxWithdrawAmount Int
-  minWithdrawAmount Int
-  defaultDailyID    Int
-  time              Int
-}
-
-model Payout {
-  id   Int    @id @default(autoincrement())
-  num  Int?   @unique
-  payout  Json[]
+  title                   String
+  content        String
+  
 }
